@@ -1,6 +1,6 @@
 # 📡 AI Launch Radar
 
-**Демо:** DEMO_URL
+**Демо:** https://ai-launch-radar.vercel.app
 
 Веб-сервіс для пошуку нових AI-стартапів на основі публічного API [FreeSerp](https://freeserp.ai/docs.php) (`index=sites`, ніша AI). План сайту (мета, аудиторія, сторінки, структура, SEO) — у [PLAN.md](PLAN.md).
 
