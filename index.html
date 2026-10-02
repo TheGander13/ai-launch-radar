@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AI Launch Radar — discover new AI startups daily</title>
+  <meta name="description" content="Track newly launched AI startups by niche, Domain Rating and tech stack. See which sites are built with Lovable, v0, Bolt and Base44, and compare them side by side.">
+  <meta name="keywords" content="new AI startups, AI tools directory, AI startup tracker, built with Lovable, v0 sites, Bolt sites, AI competitors">
+  <meta name="robots" content="index, follow">
+  <meta name="theme-color" content="#0b0d12">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="AI Launch Radar — discover new AI startups daily">
+  <meta property="og:description" content="Fresh AI startups by niche, DR and stack. Powered by the FreeSerp API.">
+  <meta name="twitter:card" content="summary">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📡</text></svg>">
+  <link rel="stylesheet" href="style.css">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "AI Launch Radar",
+    "applicationCategory": "BusinessApplication",
+    "description": "Discover and compare newly launched AI startups by niche, Domain Rating and tech stack.",
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+  }
+  </script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap header-row">
+      <a class="logo" href="./">📡 <span>AI Launch Radar</span></a>
+      <nav class="tabs" role="tablist" aria-label="Sections">
+        <button class="tab active" data-tab="radar" role="tab" aria-selected="true">Radar</button>
+        <button class="tab" data-tab="built" role="tab" aria-selected="false">Built with AI</button>
+        <button class="tab" data-tab="compare" role="tab" aria-selected="false">Compare <span id="compareCount" class="badge">0</span></button>
+      </nav>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section class="hero">
+      <h1 id="pageTitle">New AI startups, every day</h1>
+      <p id="pageLead" class="lead">A live radar of genuine AI products discovered by FreeSerp — filter by niche, authority and stack, then shortlist and compare.</p>
+      <div id="stats" class="stats" aria-live="polite"></div>
+    </section>
+
+    <section id="filtersSection" class="filters" aria-label="Filters">
+      <input id="q" type="search" placeholder="Search: e.g. voice agent, vector database…" aria-label="Search">
+      <select id="niche" aria-label="Niche">
+        <option value="">All AI niches</option>
+        <option>AI Agents &amp; Autonomous</option>
+        <option>Code &amp; Dev Tools</option>
+        <option>AI Infrastructure &amp; API</option>
+        <option>AI Automation &amp; Workflows</option>
+        <option>LLM &amp; Prompt Tools</option>
+        <option>AI Search &amp; Answers</option>
+        <option>AI Website Builder</option>
+        <option>No-code / App Builder</option>
+        <option>Image Generation</option>
+        <option>Video Generation</option>
+        <option>Voice &amp; Text-to-Speech</option>
+        <option>Data &amp; Analytics</option>
+        <option>Research &amp; Science</option>
+        <option>Design &amp; UI</option>
+        <option>Chatbot &amp; Assistant</option>
+      </select>
+      <select id="builder" aria-label="Built with">
+        <option value="">Any stack</option>
+        <option value="lovable">Lovable</option>
+        <option value="v0">v0</option>
+        <option value="bolt">Bolt</option>
+        <option value="base44">Base44</option>
+        <option value="ai_likely">Looks AI-built</option>
+        <option value="nextjs">Next.js</option>
+        <option value="react">React</option>
+        <option value="webflow">Webflow</option>
+        <option value="wordpress">WordPress</option>
+      </select>
+      <select id="drMin" aria-label="Minimum Domain Rating">
+        <option value="">Any DR</option>
+        <option value="5">DR 5+</option>
+        <option value="10">DR 10+</option>
+        <option value="20">DR 20+</option>
+        <option value="40">DR 40+</option>
+      </select>
+      <select id="sort" aria-label="Sort">
+        <option value="went_live:desc">Newest first</option>
+        <option value="dr:desc">Highest DR</option>
+        <option value="relevance:desc">Most relevant</option>
+        <option value="went_live:asc">Oldest first</option>
+      </select>
+      <button id="resetBtn" class="ghost" type="button">Reset</button>
+    </section>
+
+    <section id="builderChips" class="chips hidden" aria-label="AI builders"></section>
+
+    <p id="resultMeta" class="result-meta" aria-live="polite"></p>
+    <section id="results" class="grid" aria-label="Results"></section>
+    <div class="more-row"><button id="moreBtn" class="primary hidden" type="button">Load more</button></div>
+
+    <section id="compareView" class="hidden" aria-label="Compare sites"></section>
+  </main>
+
+  <div id="tray" class="tray hidden" role="region" aria-label="Compare tray">
+    <div class="wrap tray-row">
+      <span id="trayText"></span>
+      <div>
+        <button id="trayClear" class="ghost" type="button">Clear</button>
+        <button id="trayGo" class="primary" type="button">Compare →</button>
+      </div>
+    </div>
+  </div>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <p>Data: <a href="https://freeserp.ai/docs.php" target="_blank" rel="noopener">FreeSerp API</a> (FreeSerp Main, <code>index=sites</code>). “Live since” is the date FreeSerp first confirmed the site reachable — not the official launch date. DR is FreeSerp's own Domain Rating; new domains may not be scored yet.</p>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>

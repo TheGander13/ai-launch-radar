@@ -1,0 +1,6 @@
+{
+  "rewrites": [
+    { "source": "/api/overview", "destination": "https://freeserp.ai/api.php?stats=1" },
+    { "source": "/api/freeserp", "destination": "https://freeserp.ai/api.php" }
+  ]
+}
