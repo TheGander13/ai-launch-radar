@@ -247,7 +247,8 @@ function switchTab(tab) {
   el.title.textContent = TEXT[tab].title;
   el.lead.textContent = TEXT[tab].lead;
   const isCmp = tab === 'compare';
-  [el.filters, el.meta, el.results, el.stats].forEach((x) => x.classList.toggle('hidden', isCmp));
+  [el.filters, el.meta, el.results].forEach((x) => x.classList.toggle('hidden', isCmp));
+  el.stats.classList.toggle('hidden', tab !== 'radar'); // index-wide stats belong to Radar; Built tab has its own chip counts
   el.compareView.classList.toggle('hidden', !isCmp);
   el.chips.classList.toggle('hidden', tab !== 'built');
   updateCompareUI();
